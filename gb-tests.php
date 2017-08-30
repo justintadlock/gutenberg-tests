@@ -29,6 +29,7 @@ final class GB_Tests {
 
 		if ( is_null( $instance ) ) {
 			$instance = new self;
+			$instance->includes();
 			$instance->setup_actions();
 		}
 
@@ -43,6 +44,11 @@ final class GB_Tests {
 	 * @return void
 	 */
 	private function __construct() {}
+
+	private function includes() {
+
+		require_once( plugin_dir_path( __FILE__ ) . 'inc/block-types.php' );
+	}
 
 	/**
 	 * Sets up main plugin actions and filters.
